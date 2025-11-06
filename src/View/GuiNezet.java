@@ -1,9 +1,7 @@
-
 package View;
 
 public class GuiNezet extends javax.swing.JFrame {
 
- 
     public GuiNezet() {
         initComponents();
     }
@@ -237,7 +235,6 @@ public class GuiNezet extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtaVisszajelzesActionPerformed
 
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -292,4 +289,33 @@ public class GuiNezet extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtnValasztUjat;
     private javax.swing.JTextField txtaVisszajelzes;
     // End of variables declaration//GEN-END:variables
+
+    public void mutatNyitottAjto(int nyitottAjto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void kerdezDontest() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void mutatEredmeny(boolean nyert) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void reset() {
+        btnAjto1.setText("1.ajtó");
+        btnAjto2.setText("2.ajtó");
+        btnAjto3.setText("3.ajtó");
+
+        btnAjto1.setEnabled(true);
+        btnAjto2.setEnabled(true);
+        btnAjto3.setEnabled(true);
+
+        lblAjto1Allapot.setText("Zárva");
+        lblAjto2Allapot.setText("Zárva");
+        lblAjto3Allapot.setText("Zárva");
+
+        txtaVisszajelzes.setText("");
+        pnlDontesValtoztat.setVisible(false);
+    }
 }

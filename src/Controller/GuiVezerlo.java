@@ -8,34 +8,26 @@ public class GuiVezerlo {
     private ModelKincsesAjto modell;
     private GuiNezet nezet;
 
-
     public GuiVezerlo(ModelKincsesAjto modell, GuiNezet nezet) {
         this.modell = modell;
         this.nezet = nezet;
-
-        nezet.setAjtoValasztasListener(this::ajtoValasztva);
-        nezet.setDontesListener(this::dontesKesz);
-        nezet.setUjJatekListener(this::ujJatekInditasa);
+        start();
     }
 
-    private void ajtoValasztva(int ajtoIndex) {
-        modell.valasztas(ajtoIndex);
-        nezet.frissitAjtok(modell.getAjtok()); 
-        nezet.mutatNyitottAjto(modell.getNyitottAjto()); 
-        nezet.kerdezDontest(); 
-    }
+    private void start() {
+        nezet.reset(); // GUI visszaállítása
+        modell.ujJatek(); // új nyeremény elhelyezése
 
+        int valasztottAjto = nezet.bekeres();
+        modell.valasztas(valasztottAjto);
 
-    private void dontesKesz(boolean valtott) {
+        nezet.megjelenit("A gép kinyitott egy ajtót...");
+        nezet.megjelenit("Nyitott ajtó: " + modell.getNyitottAjto());
+
+        boolean valtott = nezet.dontes();
         int vegsoValasztas = valtott ? modell.getMasikAjto() : modell.getValasztottAjto();
+
         boolean nyert = modell.ellenoriz(vegsoValasztas);
-        nezet.mutatEredmeny(nyert); 
+        nezet.megjelenit(nyert ? "Gratulálok, nyertél!" : "Sajnálom, nem nyertél.");
     }
-
-    private void ujJatekInditasa() {
-        modell = new ModelKincsesAjto(); 
-        nezet.reset(); 
-    }
-}
-
 }

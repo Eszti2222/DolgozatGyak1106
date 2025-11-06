@@ -1,10 +1,16 @@
 package View;
 
-public class GuiNezet extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
 
+public abstract class GuiNezet extends javax.swing.JFrame {
     public GuiNezet() {
         initComponents();
     }
+    public abstract void megjelenit(String uzenet);
+    public abstract int bekeres(); 
+    public abstract boolean dontes(); 
+    public abstract void reset(); 
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -235,37 +241,6 @@ public class GuiNezet extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtaVisszajelzesActionPerformed
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GuiNezet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GuiNezet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GuiNezet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GuiNezet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GuiNezet().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjto1;
@@ -290,32 +265,4 @@ public class GuiNezet extends javax.swing.JFrame {
     private javax.swing.JTextField txtaVisszajelzes;
     // End of variables declaration//GEN-END:variables
 
-    public void mutatNyitottAjto(int nyitottAjto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void kerdezDontest() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void mutatEredmeny(boolean nyert) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void reset() {
-        btnAjto1.setText("1.ajtó");
-        btnAjto2.setText("2.ajtó");
-        btnAjto3.setText("3.ajtó");
-
-        btnAjto1.setEnabled(true);
-        btnAjto2.setEnabled(true);
-        btnAjto3.setEnabled(true);
-
-        lblAjto1Allapot.setText("Zárva");
-        lblAjto2Allapot.setText("Zárva");
-        lblAjto3Allapot.setText("Zárva");
-
-        txtaVisszajelzes.setText("");
-        pnlDontesValtoztat.setVisible(false);
-    }
 }
